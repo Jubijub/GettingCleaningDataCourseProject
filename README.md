@@ -1,5 +1,9 @@
 # GettingCleaningDataCourseProject by Jubijub
 
+## Prerequisites
+1. The script will require the dplyr and reshape2 packages
+2. You can install those by doing `install.packages("dyplr", "reshape2")
+
 ## Step by step
 
 1. Clone this repository somewhere on your computer
