@@ -4,7 +4,7 @@
 
 1. Clone this repository somewhere on your computer
 2. Open an R session, and set the working directory to be the same as the `run_analysis.R` script, which should be the root of the clone project
-3. Type `source("run_analysis.R")` : the script will carry out the work, and produce a result file in the same folder, called `averaged_data.txt`
+3. Type `source("run_analysis.R")` : the script will carry out the work, and produce a result file in the same folder, called `averaged_data.txt` **The code book referenced below will describe exactly what the script does.**
 4. Be sure to check the [Code book](https://github.com/Jubijub/GettingCleaningDataCourseProject/blob/master/Codebook.md)
 
 ##Troubleshooting
