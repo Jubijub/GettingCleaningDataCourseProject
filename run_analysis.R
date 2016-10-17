@@ -19,6 +19,7 @@ if(file.exists("./rawdata/UCI HAR Dataset/README.txt")) {
     message("Data successfully retrieved from source file")
 }
 
+message("Assembling master data set...")
 ## Merging training and test activities
 trainingData <- read.table("./rawdata/UCI HAR Dataset/train/X_train.txt")
 trainingLabel <- read.table("./rawdata/UCI HAR Dataset/train/y_train.txt")
@@ -61,6 +62,8 @@ names(measurementsSubjects) <- "subject"
 cleandata <- cbind(measurementsSubjects, measurementsLabel, measurements)
 cleandata <- arrange(cleandata, subject, activity)
 
+message("Master dataset assembled and cleaned")
+
 #produce summary independant tidy dataset with average per subject per activity
 independant <- cleandata %>%
                 group_by(subject, activity) %>%
@@ -70,3 +73,4 @@ independantLong <- arrange(independantLong, subject, activity)
 names(independantLong) <- c("subject", "activity", "feature", "average")
 
 write.table(independantLong, "averaged_data.txt", row.names = FALSE, quote = FALSE)
+message("Summary dataset produced and cleaned : check 'averaged_data.txt'")

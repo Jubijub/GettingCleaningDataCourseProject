@@ -46,7 +46,7 @@ No original files is modified by the scripts. All the processing is done in memo
   * At this point the dataset is clean, but very wide, so Reshape2 package is used to melt the dataframe into a long dataframe
   * A long format has been chosen as it's the recommended format for a lot of analysis.
   * header names are updated for clarify (feature and average replaced reshape2 default variable and value)
-9. **This results in a clean, "long" dataset** : 
+9. **This results in a clean, "long" summary dataset** : 
   * one variable per column (subject, activity, variable, value)
   * and each row is a different observation for each variable.
   * the table contains only one kind of data (accelerometer data from one specific experience)
