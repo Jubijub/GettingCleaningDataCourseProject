@@ -11,14 +11,14 @@ The data manipulation performed as described below leverages the data from the [
 
 ##Data acquisition
 ### General treatment of source files
-No files is modified by the scripts. All the processing is done in memory using R.
+No original files is modified by the scripts. All the processing is done in memory using R.
 ### User expected steps
 1. clone the repository from GitHub
 2. The user is expected to set the R session working directory to same directory as the run_analysis.R script was cloned
 
 ### Steps carried out automatically
 1. Data is downloaded automatically from the supplied online archive. The zip is stored in the working directory.If the zip has been previously downloaded it will not be downloaded again.
-2. The UCI archive will be unzipped automatically in a `rawdata`subfolder (unless it already has been)
+2. The UCI archive will be unzipped automatically in a `rawdata`subfolder (unless this already happened before)
 
 ##Data transformation
 > All those steps will be taken care of automatically by the script
@@ -40,13 +40,13 @@ No files is modified by the scripts. All the processing is done in memory using 
 7. all 3 tables are merged together and rearranged
   * column bind, with subject and activity first
   * all data is arranged in ascending order or subject, then activity
-  * *At this point this is a clean "wide" dataset* : one variable per column, each row is a different observation
+  * **At this point this is a clean "wide" dataset** : one variable per column, each row is a different observation
 8. A summary dataset is produced, showing only the average for each feature per subject per activity
   * Dplyr package is used to produce the summary, after grouping the data by subject by activity
   * At this point the dataset is clean, but very wide, so Reshape2 package is used to melt the dataframe into a long dataframe
   * A long format has been chosen as it's the recommended format for a lot of analysis.
   * header names are updated for clarify (feature and average replaced reshape2 default variable and value)
-9. *This results in a clean, "long" dataset* : 
+9. **This results in a clean, "long" dataset** : 
   * one variable per column (subject, activity, variable, value)
   * and each row is a different observation for each variable.
   * the table contains only one kind of data (accelerometer data from one specific experience)
