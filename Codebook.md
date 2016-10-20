@@ -60,14 +60,17 @@ No original files is modified by the scripts. All the processing is done in memo
 1. Subject
   * Integer Factor variable with 30 levels
   * using the same subject encoding as the original study (from 1 to 30)
+  * sorted by subject ID (ascending Integer order)
 2. activity
   * Character Factor variable with 6 levels
   * litteral text description of the activity, which can take one of this 6 values :laying, sitting, standing, walking, walking\_downstairs, walking\_upstairs
-3. feature
-  * Character Factor with 79 levels
-  * Each variable name describes the type of accelerometer movement, the axis, etc... It is fully described in the `features_info.txt` located in `./rawdata/UCI HAR Dataset` folder.
-4. average
-  * the average for the matching variable, summurized out of all the observations for a given subject, for a given activity.
+  * sorted by activity label (ascending alphabetical order)
+3. 79 features variables (the 79 remaining columns)
+  * It is fully described in the `features_info.txt` located in `./rawdata/UCI HAR Dataset` folder.
+> The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
+
+  * For each Subject / activity, the value shown is the average for all features measurements 
+
   
 
 

@@ -1,4 +1,4 @@
-library(dplyr, reshape2)
+library(dplyr)
 
 cleanup <- function(x) {
     x <- sub("\\(\\)","", x) #Remove parenthesis
@@ -68,9 +68,6 @@ message("Master dataset assembled and cleaned")
 independant <- cleandata %>%
                 group_by(subject, activity) %>%
                 summarise_each(funs("mean", mean, mean(., na.rm = TRUE)))
-independantLong <- melt(independant, id.vars=c("subject", "activity"))
-independantLong <- arrange(independantLong, subject, activity)
-names(independantLong) <- c("subject", "activity", "feature", "average")
 
-write.table(independantLong, "averaged_data.txt", row.names = FALSE, quote = FALSE)
+write.table(independant, "averaged_data.txt", row.names = FALSE, quote = FALSE)
 message("Summary dataset produced and cleaned : check 'averaged_data.txt'")
